@@ -1,0 +1,54 @@
+<ui:composition 
+    template="../template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    <ui:define name="content" >
+        <h:form id="frmHelado">
+            <p:messages id="msg" />
+            <b:panel id="pnlCrearNuevoHelado" title="Nuevo">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombre"/>
+                    <p:inputText value=""/>
+                    <p:outputLabel value="Clase Helado"/>
+                    <p:inputText value=""/>
+                    <p:outputLabel value="Precio Helado"/>
+                    <p:inputText value=""/>
+                    <p:outputLabel value="Descripción"/>
+                    <p:inputText value="" />
+                    <p:outputLabel value="Estado"/>
+                    <p:selectBooleanCheckbox value="" />
+                    <p:commandButton value="Guardar" styleClass="rounded-button" 
+                                     update="frmHelado"/>
+                </p:panelGrid>
+            </b:panel>
+            <p:panel header="Lista de Helado">
+                <p:dataTable value="" var="th" >
+                    <p:column headerText="Nombre">
+                        <p:outputLabel value="" />
+                    </p:column>
+                    <p:column headerText="Clase">
+                        <p:outputLabel value="" />
+                    </p:column>
+                    <p:column headerText="Precio">
+                        <p:outputLabel value="" />
+                    </p:column>
+                    <p:column headerText="Descripción">
+                        <p:outputLabel value=""/>
+                    </p:column>
+                    <p:column headerText="Estado">
+                        <p:outputLabel value=""/>
+                    </p:column>
+                    <p:column headerText="Actualizar">
+                        <b:commandButton value="primary" ajax="true" look="primary" style="width:80px" 
+                                         
+                                         update="@form" process="@this"/>
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
