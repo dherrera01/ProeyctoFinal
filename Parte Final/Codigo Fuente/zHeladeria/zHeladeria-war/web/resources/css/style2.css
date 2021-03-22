@@ -1,0 +1,277 @@
+/*menu index*/
+* {box-sizing: border-box;}
+
+/* Style the navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #2196F3;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.topnav a:hover {
+  background-color: #804000;
+  color: white;
+}
+
+/* Active/current link */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the input container */
+.topnav .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 5px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+.topnav input[type=password] {
+  padding: 5px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 120px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+/* Style the button inside the input container */
+.topnav .login-container button {
+  float: right;
+  padding: 5px;
+  margin-top: 8px;
+  margin-right: 17px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background: #804000;
+  color: white;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav input[type=password], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #2196F3;
+  }
+}
+/*diseño de tabla hueco https://aprende-web.net/css/css6_3.php*/
+table,td, th { border: 1px solid black;  }
+table { border-collapse: collapse; margin: auto; border-radius: 5px; }
+td, th { width: 200px; height: 35px; }
+caption { font-family: Garamond; font-size: 1.5em; font-weight: bold; 
+          color: #990000;text-align: center; }
+th { font-family: Arial; font-weight: bold; color:#660033; 
+     background-color: #ffffcc; }
+td { font-family: Arial; color:#0000cc;background-color: #ccffff; 
+     padding-left: 90px;width: 90px;  padding-left: 8px; width: 200px; }
+.hueco { background-color: white;border-left-color: transparent;
+         border-top-color: transparent; }
+
+/*recuadro centrado formulario,2,3*/
+form {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+form .content {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/*recuadro centrado formulario,2,3*/
+/*https://jsfiddle.net/ttbeobLm/*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    border:none;
+    width: 100%;
+}
+
+#header{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow:hidden;
+}
+
+#footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow:hidden;
+}
+
+#formulario{
+    margin: 0 auto;
+    align-content: center;
+    border-radius: 10px;
+    border: 1px solid #666666;
+    width: 500px;
+}
+#formulario2{
+    margin: 0 auto;
+    align-content: center;
+    border-radius: 10px;
+    border: 1px solid #666666;
+    width: 800px;
+}
+#formulario3{
+    margin: 0 auto;
+    align-content: center;
+    border-radius: 10px;
+    border: 1px solid #666666;
+    width: 1600px;
+}
+
+label {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+}
+
+input {
+    font-size: 14px;
+}
+
+input[type="text"],[type="password"],[type="email"],[type="select"],[type="number"] {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #777;
+    max-width: 100%;
+    outline: none;
+    padding: 7px 8px;
+}
+
+input[type="submit"],[type="reset"] {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #0088B2;
+    color: #fff;
+    padding: 8px 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;    
+}
+
+textarea{
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #777;
+    max-width: 100%;
+    outline: none;
+    padding: 7px 8px;
+}
+
+input[type="submit"]:hover,[type="reset"]:hover {
+    background: #444;
+}
+
+form {
+  padding: 30px;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+}
+.contenedor1 {
+background-color: #0BF;
+height: 200px;
+width: 200px;
+border-radius: 10px;
+}
+
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #804000;
+	text-align: center;
+}
+
+/*css boton href url*/
+.enlaceboton {    font-family: verdana, arial, sans-serif;
+   font-size: 10pt;
+   font-weight: bold;
+   padding: 4px;
+   background-color: #ffffcc;
+   color: #666666;
+   text-decoration: none;
+   border-radius: 8px;
+}
+.enlaceboton:link,
+.enlaceboton:visited {
+   border-top: 1px solid #cccccc;
+   border-bottom: 2px solid #666666;
+   border-left: 1px solid #cccccc;
+   border-right: 2px solid #666666;
+}
+.enlaceboton:hover {
+   border-bottom: 1px solid #cccccc;
+   border-top: 2px solid #666666;
+   border-right: 1px solid #cccccc;
+   border-left: 2px solid #666666;
+}
+/*menu superior */
+.men { 
+    display:table; 
+    width:100%; 
+} 
+.tr1 { 
+    display:table-row; 
+} 
+.d1 { 
+    display:table-cell; 
+    width:25%; 
+} 
+.d2 { 
+    display:table-cell; 
+    text-align:center; 
+    width:50%; 
+} 
+.d3 { 
+    display:table-cell; 
+    text-align:right; 
+    width:25%; 
+} 

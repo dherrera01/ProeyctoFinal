@@ -1,0 +1,60 @@
+<ui:composition 
+    template="../template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    <ui:define name="content" >
+        <h:form id="frmHelado">
+            <p:messages id="msg" />
+            <b:panel id="pnlCrearNuevoHelado" title="Nuevo Helado">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombre"/>
+                    <p:inputText value="#{heladoControl.helado.nombreHelado}"/>
+                    
+                    <p:outputLabel value="Categoria"/>
+                    <p:selectOneMenu id="option" value="#{heladoControl.idCategoriaHelado}" >
+                        <f:selectItem itemLabel="Tipo de Helado" itemValue=""/>
+                        <f:selectItems value="#{heladoControl.selectItemCategoriaHelado}" var="item" itemValue="#{item.value}" itemLabel="#{item.label}" />
+                    </p:selectOneMenu>
+                    <p:outputLabel value="Precio Helado"/>
+                    <p:inputText value="#{heladoControl.helado.precioVenta}"/>
+                    <p:outputLabel value="Descripción"/>
+                    <p:inputText value="#{heladoControl.helado.descripcion}" />
+                    <p:outputLabel value="Estado"/>
+                    <p:selectBooleanCheckbox value="#{heladoControl.helado.estado}" />
+                    <p:commandButton value="Guardar" styleClass="rounded-button"  action="#{heladoControl.guardar()}"
+                                     update="@form"/>
+                     
+                </p:panelGrid>
+            </b:panel>
+            <p:panel header="Listado de Helados">
+                <p:dataTable value="#{heladoControl.listaHelado}" var="h">
+                    <p:column headerText="Nombre">
+                        <p:outputLabel value="#{h.nombreHelado}" />
+                    </p:column>
+                     <p:column headerText="Categoria">
+                        <p:outputLabel value="#{h.idCategoria.nombreCategoria}" />
+                    </p:column>
+                    <p:column headerText="Precio">
+                        <p:outputLabel value="#{h.precioVenta}" />
+                    </p:column>
+                    <p:column headerText="Descripción">
+                        <p:outputLabel value="#{h.descripcion}"/>
+                    </p:column>
+                    <p:column headerText="Estado">
+                        <p:outputLabel value="#{h.estado}"/>
+                    </p:column>
+                    <p:column headerText="Actualizar">
+                          <b:commandButton value="Actualizar" ajax="true" look="primary" style="width:100px" 
+                                           action="#{heladoControl.actualizar(h)}"
+                                         update="@form" process="@this"/>
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+                       
+    </ui:define>
+</ui:composition>

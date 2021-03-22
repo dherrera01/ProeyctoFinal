@@ -1,0 +1,106 @@
+<ui:composition
+    template="../template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    <ui:define name="content" >
+        <h:form >
+            <b:container>
+                <b:column>
+                    <b:column span="3">
+                        <p:outputLabel value="Cliente" />
+                    </b:column>
+                    <b:column span="3">
+                        <b:selectOneMenu id="somCliente" required="true" >
+                            <f:selectItem itemValue="" itemLabel="Seleccione" />
+                            <f:selectItems value="" var="cli" itemValue="" itemLabel=""/>
+                        </b:selectOneMenu>
+                    </b:column>
+                    <b:column>
+                        <b:message for="somCliente" />
+                    </b:column>
+                    
+                </b:column>
+                
+                <b:column>
+                    <b:column span="3">
+                        <p:outputLabel value="Habitacion" />
+                    </b:column>
+                    <b:column span="3">
+                        <b:selectOneMenu id="somHabitacion" required="true" >
+                            <f:selectItem itemValue="" itemLabel="Seleccione" />
+                            <f:selectItems itemValue="" itemLabel=""/>
+                        </b:selectOneMenu>
+                    </b:column>
+                    <b:column>
+                        <b:message for="somHabitacion" />
+                    </b:column>
+                </b:column>
+                
+                <b:row>
+                    <b:column span="3">
+                        <p:outputLabel value="Cantidad de Huespedes" />
+                    </b:column>
+                    <b:column span="3">
+                        <b:inputText id="txtCantidad" />
+                    </b:column>
+                    <b:column>
+                        <b:message for="txtCantidad" />
+                    </b:column>
+                </b:row>
+                
+                <b:row>
+                    <b:column span="3">
+                        <p:outputLabel value="Fecha Incio" />
+                    </b:column>
+                    <b:column span="3">
+                        
+                    </b:column>
+                    <b:column>
+                        <b:message for="cldFechaInicio"  />
+                    </b:column>
+                </b:row>
+                
+                 <b:row>
+                    <b:column span="3">
+                        <p:outputLabel value="Fecha Fin" />
+                    </b:column>
+                    <b:column span="3">
+                       
+                    </b:column>
+                    <b:column>
+                        <b:message for="cldFechaFin" />
+                    </b:column>
+                </b:row>
+                
+                 <b:row>
+                    <b:column span="3">
+                        <p:outputLabel value="Precio" />
+                    </b:column>
+                    <b:column span="3">
+                        <b:inputText id="txtPrecio" />
+                    </b:column>
+                    <b:column>
+                        <b:message for="txtPrecio" />
+                    </b:column>
+                </b:row>
+                
+                <b:row>
+                    <b:column span="3">
+                        <p:outputLabel value="Estado" />
+                    </b:column>
+                    <b:column span="3">
+                        <b:selectBooleanCheckbox id="sbcEstado" />
+                    </b:column>
+                    <b:column>
+                        <b:message for="sbcEstado" />
+                    </b:column>
+                </b:row>
+                
+            </b:container>
+        </h:form>
+    </ui:define>
+</ui:composition>

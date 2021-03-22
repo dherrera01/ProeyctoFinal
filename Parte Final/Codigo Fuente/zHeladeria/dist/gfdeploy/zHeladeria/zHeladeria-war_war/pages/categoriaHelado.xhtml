@@ -1,0 +1,46 @@
+<ui:composition 
+    template="../template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    <ui:define name="content" >
+        <h:form id="frmTipoHelado">
+            <p:messages id="msg" />
+            <b:panel id="pnlCrearNuevoTipoHelado" title="Nuevos Tipos de Helado">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombre"/>
+                    <p:inputText value="#{categoriaHeladoControl.tipoHelado.nombreCategoria}"/>
+                    <p:outputLabel value="Descripción"/>
+                    <p:inputText value="#{categoriaHeladoControl.tipoHelado.descripcion}" />
+                    <p:outputLabel value="Estado"/>
+                    <p:selectBooleanCheckbox value="#{categoriaHeladoControl.tipoHelado.estado}"/>                                         
+                    <p:commandButton value="Guardar" styleClass="rounded-button" action="#{categoriaHeladoControl.guardar()}"
+                                     update="frmTipoHelado"/>
+                </p:panelGrid>
+            </b:panel>
+            <p:panel header="Listado de Tipo Helado">
+                <p:dataTable value="#{categoriaHeladoControl.listTipoHelado}" var="ch" >
+                    <p:column headerText="Nombre">
+                        <p:outputLabel value="#{ch.nombreCategoria}" />
+                    </p:column>
+                    <p:column headerText="Descripción">
+                        <p:outputLabel value="#{ch.descripcion}"/>
+                    </p:column>
+                    <p:column headerText="Estado">
+                        <p:outputLabel value="#{ch.estado}"/>
+                    </p:column>
+                   
+                   <p:column headerText="Actualizar">
+                        <b:commandButton value="Actualizar" look="primary" style="width:100px" 
+                                         action="#{categoriaHeladoControl.seleccionarTipoHelado(ch)}"
+                                         update="@form" process="@this"/>
+                    </p:column>
+                   
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>

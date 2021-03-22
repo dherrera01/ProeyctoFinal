@@ -1,0 +1,76 @@
+<ui:composition 
+    template="../template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    <ui:define name="content" >
+        
+        <h:form id="frmVenta2">
+            <p:messages id="msg" />
+            <b:container >
+                <b:row>
+                    <b:column col-md="6" col-xs="12" >
+                        <b:panel id="pnlCrearNuevoVenta" title="Detalle de Venta">
+                            <p:panelGrid columns="2" >
+                                <p:outputLabel value="N. Venta"/>
+                                <p:selectOneMenu id="option" value="#{detalleVentaControl1.idVenta}" >
+                                    <f:selectItem itemLabel="Seleccione" itemValue=""/>
+                                    <f:selectItems value="#{detalleVentaControl1.selectItemVenta}" var="item" itemValue="#{item.value}" itemLabel="#{item.label}" />
+                                </p:selectOneMenu>
+                              
+                                <p:outputLabel value="Helado"/>
+                                <p:selectOneMenu id="option2" value="" >
+                                    <f:selectItem itemLabel="Seleccione" itemValue="#{detalleVentaControl.idHelado}"/>
+                                    <f:selectItems value="#{detalleVentaControl.selectItemHelado}" var="item2" itemValue="#{item.value}" itemLabel="#{item.label}" />
+                                </p:selectOneMenu>
+                                
+                                <p:outputLabel value="Precio"/>
+                                <p:inputText value="#{detalleVentaControl.detalleVenta.descuento}"/>
+                                 <p:outputLabel value="Cantidad"/>
+                                 <p:inputText value="#{detalleVentaControl.detalleVenta.cantidad}"/>
+
+                              
+                                <p:commandButton value="Guardar Helado" styleClass="rounded-button"  action="#{detalleVentaControl.guardar()}"
+                                                 update="@form"/>
+                            </p:panelGrid>
+                        </b:panel>
+                    </b:column>
+       
+                    <b:column col-md="6" col-xs="12">
+                        <p:panel header="Lista de Helados Seleccionados">
+                            <p:dataTable value="#{detalleVentaControl.listaDetalleVenta}" var="dv" >
+                                <p:column headerText="Num. Venta">
+                                    <p:outputLabel value="#{detalleVentaControl1.idVenta}" />
+                                </p:column>
+                                <p:column headerText="Nombre">
+                                    <p:outputLabel value="#{dv.idHelado.nombreHelado}" />
+                                </p:column>
+                                <p:column headerText="Cant.">
+                                    <p:outputLabel value="#{dv.cantidad}"/>
+                                </p:column>
+                                <p:column headerText="Precio">
+                                    <p:outputLabel value="#{dv.subtotal}"/>
+                                </p:column>
+                                <p:column headerText="Valor Total">
+                                    <p:outputLabel value="#{dv.subtotal}"/>
+                                </p:column>
+                                
+                                <p:column headerText="Actualizar">
+                                    <b:commandButton value="Actualizar" ajax="true" look="primary" style="width:100px" 
+                                                     
+                                                     update="@form" process="@this"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                    </b:column>
+                </b:row>
+            </b:container>
+
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+
